@@ -9,13 +9,17 @@ namespace Faker.Net.Enums
         Phone = 3,
         City = 4,
         Country = 5,
-        Text = 6,
+        TextParagraph = 6,
         Website = 7,
         IpAddress = 8,
         Guid = 9,
         GuidString = 10,
         DateTime = 11,
-        Numeric = 12
+        Numeric = 12,
+        Address = 13,
+        EmailAddress = 14,
+        ZipCode = 15,
+        Url = 16
     }
 
     //public enum DatabaseType

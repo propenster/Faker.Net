@@ -6,18 +6,32 @@
 
   <ItemGroup>
     <None Remove="Attributes\" />
-    <None Remove="Dump\" />
     <None Remove="Microsoft.Extensions.DependencyInjection" />
     <None Remove="Enums\" />
     <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <None Remove="Engine\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Attributes\" />
-    <Folder Include="Dump\" />
     <Folder Include="Enums\" />
+    <Folder Include="Engine\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
   </ItemGroup>
+
+  <PropertyGroup>
+    <PackageId>FakerLib.Net</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Faith Olusegun</Authors>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Description>FakerLib.Net is a simple .NET Core package that can be used to create dummy (fake) 
+      list of collections. That is, populate any type of collections (List) (Enumerables) with random data of different sorts : Name, Cities, Phonenumbers, Countries, ZipCodes, UUIDs, Addresses, IPAddresses, URLs, Websites, EmailAddresses, ImageURLs etc. It could be used to populate DB's, collections and so on during development and testing.
+    </Description>
+    <RepositoryUrl>https://github.com/propenster/Faker.Net</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/propenster/Faker.Net</PackageProjectUrl>
+  </PropertyGroup>
+
+
 </Project>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Faker.Net.Attributes;
+using Faker.Net.Engine;
 using Faker.Net.Enums;
 
 namespace Faker.Net
@@ -13,29 +14,32 @@ namespace Faker.Net
         private object GetPropertyValueFromFakerType(FakerType fakerType)
         {
 
-
             switch (fakerType)
             {
+                case FakerType.Address:
+                    return Address.AddressString();
                 case FakerType.Name:
-                    return (object)"John Smith";
+                    return (object)Name.NameString();
+                case FakerType.EmailAddress:
+                    return (object)EmailAddress.EmailString();
                 case FakerType.Sentence:
-
-                    return (object)"Lorem ipsum dolor consecatum";
-                case FakerType.Text:
-                    return (object)"Lorem ipsum dolor consecatumLorem ipsum dolor consecatumLorem ipsum dolor consecatumLorem ipsum dolor consecatumLorem ipsum dolor consecatumLorem ipsum dolor consecatumLorem ipsum dolor consecatumLorem ipsum dolor consecatum";
+                    return (object)Sentence.SentenceString();
+                case FakerType.TextParagraph:
+                    return (object)TextParagraph.TextParagraphString();
                 case FakerType.City:
-                    return (object)"Tokyo";
+                    return (object)City.CityString();
                 case FakerType.ImageUrl:
-                    return (object)"https://sw.amazon.com/23232iewu31u2i23i32.png";
+                    return (object)ImageUrl.ImageUrlString();
                 case FakerType.Country:
-                    return (object)"Nigeria";
+                    return (object)Country.CountryString();
                 case FakerType.IpAddress:
-                    return (object)"100.100.100.101";
+                    return (object)IPAddress.IPAddressString();
                 case FakerType.Phone:
-                    return (object)"+8102020020202";
+                    return (object)Phone.PhoneString();
                 case FakerType.Website:
-                    return (object)"https://www.github.com";
-
+                    return (object)Url.UrlString();
+                case FakerType.Url:
+                    return (object)Url.UrlString();
                 case FakerType.Guid:
                     return (object)Guid.NewGuid();
                 case FakerType.GuidString:
@@ -43,19 +47,17 @@ namespace Faker.Net
                 case FakerType.DateTime:
                     return (object)DateTime.UtcNow;
                 case FakerType.Numeric:
-                    return (object)new Random().Next(100000);
+                    return (object)new Random().Next(011111111, 999999999);
+                case FakerType.ZipCode:
+                    return (object)ZipCode.ZipCodeString();
 
                 default:
 
-                    break;
-
-
-
-
+                    throw new FormatException($"Invalid FakerType enum format {nameof(fakerType)}");
 
             }
 
-            return null;
+            throw new FormatException($"Invalid FakerType enum format {nameof(fakerType)}");
 
 
         }
@@ -63,6 +65,7 @@ namespace Faker.Net
         public ICollection<TEntity> Setup<TEntity>(Type type, int size = 1)
         {
             if (type is null) throw new ArgumentNullException(nameof(type));
+            //if (type is null) throw new ArgumentNullException(nameof(type));
 
             ICollection<TEntity> list = new List<TEntity>();
 
