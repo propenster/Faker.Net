@@ -36,8 +36,31 @@ public class Person
 
 ```
 Then anywhere in your application code where you need a list of type(Person) filled with dummy data, use below.
+
+```csharp
 var fakerFactory = new FakerFactory();
 var dummyListOfPersons = fakerFactory.Setup<Person>(typeof(Person), 5) //meaning to generate 5 items of this type(Person) of dummy data.
+
+```
+
+OR you can use Dependency Injection by registering FakerFactory in your startup.cs DI container like below 
+
+```csharp
+
+//For .NET 5 and below
+services.AddFakerFactory();
+
+//then you can inject typeof(IFakerFactory) into any class's constructor and make use of it. 
+private readonly IFakerFactory _fakerFactory;
+public PersonService(IFakerFactory fakerFactory)
+{
+_fakerFactory = fakerFactory;
+}
+
+//Then make use of it somewhere inside this service class like below.
+
+```
+
 
 ```csharp
 var fooDto = mapper.Map<FooDto>(foo);
