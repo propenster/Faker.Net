@@ -1,4 +1,4 @@
-# Faker.Net
+# FakerLib.Net
 This is the official repository of the FakerLib.Net dummy data generator library for .NET
 
 ### What is AutoMapper?
@@ -46,6 +46,8 @@ var dummyListOfPersons = fakerFactory.Setup<Person>(typeof(Person), 5) //meaning
 OR you can use Dependency Injection by registering FakerFactory in your startup.cs DI container like below 
 
 ```csharp
+//For .NET 6 and above
+builder.Services.AddFakerFactory();
 
 //For .NET 5 and below
 services.AddFakerFactory();
@@ -58,14 +60,11 @@ _fakerFactory = fakerFactory;
 }
 
 //Then make use of it somewhere inside this service class like below.
+var dummyListOfPersons = _fakerFactory.Setup<Person>(typeof(Person), 5) //meaning to generate 5 items of this type(Person) of dummy data.
+
 
 ```
 
-
-```csharp
-var fooDto = mapper.Map<FooDto>(foo);
-var barDto = mapper.Map<BarDto>(bar);
-```
 
 
 
