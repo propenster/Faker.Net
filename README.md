@@ -36,7 +36,7 @@ public class Person
 
 ```
 
-### Other FakerTypes you can use 
+### All FakerTypes that you can use 
 ```csharp
 public enum FakerType
     {
