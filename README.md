@@ -35,6 +35,30 @@ public class Person
 }
 
 ```
+
+### Other FakerTypes you can use 
+```csharp
+public enum FakerType
+    {
+        Name = 0,
+        Sentence = 1,
+        ImageUrl = 2,
+        Phone = 3,
+        City = 4,
+        Country = 5,
+        TextParagraph = 6,
+        Website = 7,
+        IpAddress = 8,
+        Guid = 9,
+        GuidString = 10,
+        DateTime = 11,
+        Numeric = 12,
+        Address = 13,
+        EmailAddress = 14,
+        ZipCode = 15,
+        Url = 16
+    }
+```
 Then anywhere in your application code where you need a list of type(Person) filled with dummy data, use below.
 
 ```csharp
