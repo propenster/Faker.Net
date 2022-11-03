@@ -93,7 +93,7 @@ var dummyListOfPersons = _fakerFactory.Setup<Person>(typeof(Person), 5) //meanin
 If you're facing some problems using the package, file an issue above.
 
 ### License, etc.
-AutoMapper is Copyright &copy; 2022 [Faith Olusegun](https://github.com/propenster) and other contributors under the [MIT license](https://github.com/propenster/Faker.Net/blob/main/LICENSE).
+FakerLib.Net is Copyright &copy; 2022 [Faith Olusegun](https://github.com/propenster) and other contributors under the [MIT license](https://github.com/propenster/Faker.Net/blob/main/LICENSE).
 
 And this project was first inspired in 2019 by the Faker Library in PHP Laravel. Not until now was it made real for C# .NET.
 
